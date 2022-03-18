@@ -247,13 +247,13 @@ class Solution {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
 
-        ArrayList<List<Integer>> res = new ArrayList<List<Integer>>();
+        ArrayList<List<Integer>> res = new ArrayList<>();
         if(root == null)
             return res;
 
         // 我们使用LinkedList来做为我们的先入先出的队列
         ArrayQueue<Pair<TreeNode, Integer>> queue = new ArrayQueue<Pair<TreeNode, Integer>>();
-        queue.enqueue(new Pair<TreeNode, Integer>(root, 0));
+        queue.enqueue(new Pair<>(root, 0));
 
         while(!queue.isEmpty()){
 
@@ -262,14 +262,14 @@ class Solution {
             int level = front.getValue();
 
             if(level == res.size())
-                res.add(new ArrayList<Integer>());
+                res.add(new ArrayList<>());
             assert level < res.size();
 
             res.get(level).add(node.val);
             if(node.left != null)
-                queue.enqueue(new Pair<TreeNode, Integer>(node.left, level + 1));
+                queue.enqueue(new Pair<>(node.left, level + 1));
             if(node.right != null)
-                queue.enqueue(new Pair<TreeNode, Integer>(node.right, level + 1));
+                queue.enqueue(new Pair<>(node.right, level + 1));
         }
 
         return res;

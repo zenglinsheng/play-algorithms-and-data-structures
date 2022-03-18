@@ -2,9 +2,9 @@ package A_03_Selection_Sort.L_03_Using_Generics;
 
 public class SelectionSort {
 
-    private SelectionSort(){}
+    private SelectionSort() {}
 
-    public static <E extends Comparable<E>> void sort(E[] arr){
+    public static <E extends Comparable<E>> void sort(E[] arr) {
 
         // arr[0...i) 是有序的；arr[i...n) 是无序的
         for(int i = 0; i < arr.length; i ++){
@@ -20,14 +20,14 @@ public class SelectionSort {
         }
     }
 
-    private static <E> void swap(E[] arr, int i, int j){
+    private static <E> void swap(E[] arr, int i, int j) {
 
         E t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Integer[] arr = {1, 4, 2, 3, 6, 5};
         SelectionSort.sort(arr);

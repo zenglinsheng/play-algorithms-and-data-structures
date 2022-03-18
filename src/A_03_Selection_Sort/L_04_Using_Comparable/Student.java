@@ -1,17 +1,17 @@
 package A_03_Selection_Sort.L_04_Using_Comparable;
 
-public class Student implements Comparable<Student>{
+public class Student implements Comparable<Student> {
 
     private String name;
     private int score;
 
-    public Student(String name, int score){
+    public Student(String name, int score) {
         this.name = name;
         this.score = score;
     }
 
     @Override
-    public int compareTo(Student another){
+    public int compareTo(Student another) {
 
 //        if(this.score < another.score)
 //            return -1;
@@ -19,12 +19,12 @@ public class Student implements Comparable<Student>{
 //            return 0;
 //        return 1;
 
-//        return this.score - another.score;
-        return another.score - this.score;
+        return this.score - another.score;
+//        return another.score - this.score;
     }
 
     @Override
-    public boolean equals(Object student){
+    public boolean equals(Object student) {
 
         if(this == student)
             return true;
@@ -40,7 +40,7 @@ public class Student implements Comparable<Student>{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.format("Student(name: %s, score: %d)", name, score);
     }
 }

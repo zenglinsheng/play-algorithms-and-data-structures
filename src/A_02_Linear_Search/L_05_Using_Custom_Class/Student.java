@@ -9,7 +9,7 @@ public class Student {
     }
 
     @Override
-    public boolean equals(Object student){
+    public boolean equals(Object student) {
 
         if(this == student)
             return true;

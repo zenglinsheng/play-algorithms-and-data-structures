@@ -2,9 +2,9 @@ package A_02_Linear_Search.L_05_Using_Custom_Class;
 
 public class LinearSearch {
 
-    private LinearSearch(){}
+    private LinearSearch() {}
 
-    public static <E> int search(E[] data, E target){
+    public static <E> int search(E[] data, E target) {
 
         for(int i = 0; i < data.length; i ++)
             if(data[i].equals(target))

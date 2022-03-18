@@ -2,9 +2,9 @@ package A_03_Selection_Sort.L_07_Another_Selection_Sort;
 
 public class SortingHelper {
 
-    private SortingHelper(){}
+    private SortingHelper() {}
 
-    public static <E extends Comparable<E>> boolean isSorted(E[] arr){
+    public static <E extends Comparable<E>> boolean isSorted(E[] arr) {
 
         for(int i = 1; i < arr.length; i ++)
             if(arr[i - 1].compareTo(arr[i]) > 0)
@@ -12,7 +12,7 @@ public class SortingHelper {
         return true;
     }
 
-    public static <E extends Comparable<E>> void sortTest(String sortname, E[] arr){
+    public static <E extends Comparable<E>> void sortTest(String sortname, E[] arr) {
 
         long startTime = System.nanoTime();
         if(sortname.equals("SelectionSort"))

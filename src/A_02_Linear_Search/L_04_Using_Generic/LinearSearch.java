@@ -2,9 +2,9 @@ package A_02_Linear_Search.L_04_Using_Generic;
 
 public class LinearSearch {
 
-    private LinearSearch(){}
+    private LinearSearch() {}
 
-    public static <E> int search(E[] data, E target){
+    public static <E> int search(E[] data, E target) {
 
         for(int i = 0; i < data.length; i ++)
             if(data[i].equals(target))
@@ -13,7 +13,7 @@ public class LinearSearch {
         return -1;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Integer[] data = {24, 18, 12, 9, 16, 66, 32, 4};
 

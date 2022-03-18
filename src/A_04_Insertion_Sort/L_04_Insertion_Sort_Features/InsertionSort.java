@@ -20,6 +20,29 @@ public class InsertionSort {
         }
     }
 
+    public static <E extends  Comparable<E>> void sort2(E[] arr) {
+
+        for (int i = arr.length - 1;i >= 0;i --) {
+            E tmp = arr[i];
+            int j = i;
+            for (;j + 1 <= arr.length - 1 && tmp.compareTo(arr[j + 1]) > 0;j ++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[j] = tmp;
+        }
+    }
+
+    public static <E extends  Comparable<E>> void sort3(E[] arr) {
+        for (int i = 1;i < arr.length;i ++) {
+            E tmp = arr[i];
+            int j = i;
+            for (;j - 1 >= 0 && tmp.compareTo(arr[j - 1]) < 0;j --) {
+                arr[j] = arr[j - 1];
+            }
+            arr[j] = tmp;
+        }
+    }
+
     private static <E extends Comparable<E>> boolean isSorted(E[] arr){
 
         for(int i = 1; i < arr.length; i ++)
@@ -28,28 +51,32 @@ public class InsertionSort {
         return true;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        Integer[] arr = new Integer[]{2, 1, 4, 3, 6, 5};
+        InsertionSort.sort2(arr);
+        for (Integer i: arr)
+            System.out.print(i + " ");
 
-        int[] dataSize = {10000, 100000};
-        for(int n: dataSize){
-
-            System.out.println("Random Array : ");
-
-            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
-            Integer[] arr2 = Arrays.copyOf(arr, arr.length);
-            SortingHelper.sortTest("InsertionSort", arr);
-            SortingHelper.sortTest("SelectionSort", arr2);
-
-            System.out.println();
-
-            System.out.println("Ordered Array : ");
-
-            arr = ArrayGenerator.generateOrderedArray(n);
-            arr2 = Arrays.copyOf(arr, arr.length);
-            SortingHelper.sortTest("InsertionSort", arr);
-            SortingHelper.sortTest("SelectionSort", arr2);
-
-            System.out.println();
-        }
+//        int[] dataSize = {1000, 10000};
+//        for(int n: dataSize){
+//
+//            System.out.println("Random Array : ");
+//
+//            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
+//            Integer[] arr2 = Arrays.copyOf(arr, arr.length);
+//            SortingHelper.sortTest("InsertionSort", arr);
+//            SortingHelper.sortTest("SelectionSort", arr2);
+//
+//            System.out.println();
+//
+//            System.out.println("Ordered Array : ");
+//
+//            arr = ArrayGenerator.generateOrderedArray(n);
+//            arr2 = Arrays.copyOf(arr, arr.length);
+//            SortingHelper.sortTest("InsertionSort", arr);
+//            SortingHelper.sortTest("SelectionSort", arr2);
+//
+//            System.out.println();
+//        }
     }
 }

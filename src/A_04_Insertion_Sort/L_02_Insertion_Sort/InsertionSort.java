@@ -2,11 +2,11 @@ package A_04_Insertion_Sort.L_02_Insertion_Sort;
 
 public class InsertionSort {
 
-    private InsertionSort(){}
+    private InsertionSort() {}
 
-    public static <E extends Comparable<E>> void sort(E[] arr){
+    public static <E extends Comparable<E>> void sort(E[] arr) {
 
-        for(int i = 0; i < arr.length; i ++){
+        for(int i = 0; i < arr.length; i ++) {
 
             // 将 arr[i] 插入到合适的位置
 //            for(int j = i; j - 1 >= 0; j --){
