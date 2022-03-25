@@ -207,6 +207,8 @@ public class LinkedListR<E> {
         for(int i = 0 ; i < 10 ; i ++)
             list.addFirst(i);
 
+        list.add(2, 100);
+
         while(!list.isEmpty())
             System.out.println("removed " + list.removeLast());
     }
